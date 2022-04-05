@@ -20,23 +20,28 @@ Import the required packages(pandas,numpy,scipy)
  ## Step8  :
   Save the final data set into the file
   ##  Program
-
+```
  import pandas as pd
  df = pd.read_csv('weight.csv')
  df.sample(10)
+ ```
 ## removing non numerical columns
  df.drop("Gender",axis=1)
 ## graph to display outliers
  df.boxplot()
 ## calculating z scores to detect outliers
+```
  from scipy import stats
  import numpy as np
  z=np.abs(stats.zscore(df))
  z
+ ```
 ## removing outliers from weight
+```
  df1=df.copy()
  df1=df1[(z<3).all(axis=1)]
  df1
+ ```
 ## checking if outliers are removed through graph
  df1.boxplot()
 ## removing outliers from height
