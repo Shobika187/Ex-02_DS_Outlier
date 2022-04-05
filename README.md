@@ -40,6 +40,7 @@ Import the required packages(pandas,numpy,scipy)
 ## checking if outliers are removed through graph
  df1.boxplot()
 ## removing outliers from height
+```
  df2=df.copy()
  q1=df2.quantile(0.25)
  q3=df2.quantile(0.75)
@@ -47,7 +48,7 @@ Import the required packages(pandas,numpy,scipy)
  df2_new=df2[((df2>=q1-1.5*IQR)&(df2<=q3+1.5*IQR)).all(axis=1)]
  df2_new.boxplot()
  df2_new
-
+```
  ## Output:
  ![Output](.//img1.png)
 ![Output](.//img2.png)
